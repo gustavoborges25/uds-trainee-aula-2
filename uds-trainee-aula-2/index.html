@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+      var nome = "Gustavo Borges de Camargo";
+      var idade = 27;
+      var sexoFemino = false;
+      var peso = 123.45;
+
+      console.log( nome + " " + idade + " " + sexoFemino + " " + peso );
+
+      alert( "Ola! Seu nome é: " + nome + ', você tem ' + idade + ' anos.'  );
+
+      if ( idade <= 18 ) {
+        alert( 'Novinho' )
+      } else if ( idade <= 30 ) {
+        alert( 'Tiozinho' )
+      } else {
+        alert( "Tiozao" )
+      }
+
+      var dataHoje = new Date().getDay();
+
+      switch ( dataHoje ) {
+        case 0:
+          alert( 'Domingo' );
+          break;
+
+        case 1:
+          alert( 'Segunda' );
+          break;
+
+        case 2:
+          alert( 'Terça' );
+          break;
+
+        case 3:
+          alert( 'Quarta' );
+          break;
+
+        case 4:
+          alert( 'Quinta' );
+          break;
+
+        case 5:
+          alert( 'Sexta' );
+          break;
+
+        case 6:
+          alert( 'Sábado' );
+          break;
+      }
+
+
+
+
+      function converteDecimalRomano( numero ) {
+        switch ( numero ) {
+          case 1:
+            return 'I';
+
+          case 2:
+            return 'II';
+
+          case 3:
+            return 'III';
+
+          case 4:
+            return 'IV';
+
+          case 5:
+            return 'V';
+
+          case 6:
+            return 'VI';
+
+          case 7:
+            return 'VII';
+
+          case 8:
+            return 'VIII';
+          case 9:
+
+            return 'IX';
+          case 10:
+            return 'X';
+          default:
+            return 'Número inválido!';
+        }
+
+
+      }
+
+      var numeroTeste = prompt( "Digite um numero de 1 a 10: " )
+
+      numeroTeste = parseInt( numeroTeste );
+
+      alert( converteDecimalRomano( numeroTeste ) );
+
+      for (var i = 1; i <= 10; i++) {
+        alert( converteDecimalRomano( i ) );
+      }
+
+      var i = 0;
+      while ( i < 10 ) {
+        alert( converteDecimalRomano( ++i ) );
+      }
+
+      for (var i = 10; i > 0; i--) {
+        alert( converteDecimalRomano( i ) );
+      }
+
+      var i = 10;
+      while ( i > 0 ) {
+        alert( converteDecimalRomano( i ) );
+        i--;
+      }
+
+
+      //var informacoes = [ 'Gustavo', [ '87000-000','Rua XXXXXX', 89, 'complemnto', 'vila marum', 'maringá', 'pr' ], '9999-9999' ];
+
+      var informacoes = [];
+      var endereco = ['cep'];
+
+      endereco.push( 'ruaXXX', 89, 'complemnto', 'bairro', 'maringá', 'pr' );
+
+      informacoes.push('Gustavo', endereco, '9999-9999');
+
+      informacoes[0] = 'Gustavo Borges de Camargo';
+      informacoes.splice( 2,1 );
+
+      console.log( informacoes);
+
+
+      var pessoa = {
+        nome     : 'Gustavo'          ,
+        sobrenome: 'Borges de Camargo',
+        endereco : {
+          cep       : '87000-000'  ,
+          logradouro: 'Rua XXXXXXX',
+          numero    : 89           ,
+          complemnto: 'complemnto' ,
+          cidade    : 'Maringá'    ,
+          uf        : 'PR'         ,
+        },
+        mostrarMinhaInformacoes: function(){
+          alert( 'Nome: '        + this.nome                +
+               '\nSobrenome: '   + this.sobrenome           +
+               '\nCep: '         + this.endereco.cep        +
+               '\nRua: '         + this.endereco.logradouro +
+               '\nNumero: '      + this.endereco.numero     +
+               '\nComplemento: ' + this.endereco.complemnto +
+               '\nCidade: '      + this.endereco.cidade     +
+               '\nEstado: '      + this.endereco.uf         );
+        }
+      }
+
+      pessoa.mostrarMinhaInformacoes();
+
+
+
+
+    </script>
+  </body>
+</html>
